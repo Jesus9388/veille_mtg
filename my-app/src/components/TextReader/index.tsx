@@ -17,6 +17,7 @@ const TextReader = ({setDeckList} : Props) => {
             cardName = cardName.trim();
             formattedDeckList.push(cardName);
         }
+        setDeckList(formattedDeckList);
         console.log(formattedDeckList);
     }
 
