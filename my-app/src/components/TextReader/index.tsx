@@ -1,8 +1,8 @@
 interface Props {
-    setText: (text: string) => void;
+    setDeckList: (text: string) => void;
 }
 
-const TextReader = ({setText} : Props) => {
+const TextReader = ({setDeckList} : Props) => {
     return (
         <div className="container content-center">
             <textarea placeholder="Please input your deck list in MTGA format" className="min-h-[200px] w-full rounded bg-white border-2 border-black"></textarea>
