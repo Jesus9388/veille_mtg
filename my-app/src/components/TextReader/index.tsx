@@ -1,3 +1,5 @@
+import { getCards } from "../../services/mtg";
+
 interface Props {
     setDeckList: (text: string[]) => void;
 }
@@ -17,8 +19,14 @@ const TextReader = ({setDeckList} : Props) => {
             cardName = cardName.trim();
             formattedDeckList.push(cardName);
         }
-        setDeckList(formattedDeckList);
-        console.log(formattedDeckList);
+        
+        getCards(formattedDeckList)
+            .then((cards) => {
+                console.log(cards.data);
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
 
     return (
