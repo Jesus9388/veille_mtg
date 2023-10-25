@@ -1,14 +1,16 @@
 import { useState } from "react";
+import DropDown from "../DropDown";
 import TextReader from "../TextReader";
 
 const NameToBeDetermined = () => {
-    const [deckList, setDeckList] = useState<string[]>([]);
+  const [format, setFormat] = useState<string>("");
 
-    return (
-        <div>
-            <TextReader setDeckList={setDeckList}></TextReader>
-        </div>
-    );
-}
+  return (
+    <div className="container content-center">
+      <DropDown setFormat={setFormat} />
+      <TextReader />
+    </div>
+  );
+};
 
 export default NameToBeDetermined;

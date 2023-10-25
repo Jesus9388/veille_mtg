@@ -1,10 +1,6 @@
 import { getCards } from "../../services/mtg";
 
-interface Props {
-    setDeckList: (text: string[]) => void;
-}
-
-const TextReader = ({setDeckList} : Props) => {
+const TextReader = () => {
     let unformattedDeckList : string = "";
 
     const formatDeckList = () => {
@@ -30,12 +26,12 @@ const TextReader = ({setDeckList} : Props) => {
     }
 
     return (
-        <div className="container content-center">
+        <>
             <textarea onChange={(event) => {
                 unformattedDeckList = event.target.value;
             }} placeholder="Please input your deck list in MTGO format" className="min-h-[200px] w-full rounded bg-white border-2 border-black"></textarea>
             <button onClick={formatDeckList} className="w-full text-center border-black border bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Submit</button>
-        </div>
+        </>
     );
 };
 
