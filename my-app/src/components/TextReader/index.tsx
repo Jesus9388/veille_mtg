@@ -13,8 +13,9 @@ const TextReader = () => {
                 cardName = cardName + splitCardName[j] + " ";
             }
             cardName = cardName.trim();
-            formattedDeckList.push(cardName);
+            formattedDeckList.push("!\"" + cardName + "\"");
         }
+        console.log(formattedDeckList);
         
         getCards(formattedDeckList)
             .then((cards) => {

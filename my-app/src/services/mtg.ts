@@ -5,7 +5,7 @@ import http from "../constants/http";
 export const getCards = async (cardNames: string[]): Promise<AxiosResponse<Card[]>> => {
     return http.get<Card[]>("/cards/search", {
         params: {
-            q: cardNames.join(" OR ")
+            q: cardNames.join(" OR "),
         }
     });
 }
