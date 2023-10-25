@@ -18,7 +18,7 @@ const DropDown = ({ setFormat, format }: Props) => {
     <div className="mb-3">
       <label
         htmlFor="formats"
-        className="block mb-2 text-sm font-medium text-gray-900"
+        className="mb-2 ml-2 text-sm font-medium text-gray-900"
       >
         {format !== "" ? "Format: " + format : "Select a format"}
       </label>
