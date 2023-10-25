@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { getCards } from "../../services/mtg";
 
 const TextReader = () => {
-    let unformattedDeckList : string = "";
+    const [unformattedDeckList, setUnformattedDeckList] = useState<string>("");
 
     const formatDeckList = () => {
         let listNames = unformattedDeckList.split("\n");
@@ -30,7 +31,7 @@ const TextReader = () => {
         <>
             <textarea
                 onChange={(event) => {
-                    unformattedDeckList = event.target.value;
+                    setUnformattedDeckList(event.target.value);
                 }}
                 placeholder="Please input your deck list in MTGO format"
                 className="min-h-[200px] w-full rounded bg-white border-2 border-black p-3"
