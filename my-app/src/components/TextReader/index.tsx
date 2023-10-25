@@ -27,10 +27,19 @@ const TextReader = () => {
 
     return (
         <>
-            <textarea onChange={(event) => {
-                unformattedDeckList = event.target.value;
-            }} placeholder="Please input your deck list in MTGO format" className="min-h-[200px] w-full rounded bg-white border-2 border-black"></textarea>
-            <button onClick={formatDeckList} className="w-full text-center border-black border bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+            <textarea
+                onChange={(event) => {
+                    unformattedDeckList = event.target.value;
+                }}
+                placeholder="Please input your deck list in MTGO format"
+                className="min-h-[200px] w-full rounded bg-white border-2 border-black p-3"
+            />
+            <button
+                onClick={formatDeckList}
+                className="text-center border-black border bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded font-medium text-gray-900"
+            >
+                Submit
+            </button>
         </>
     );
 };

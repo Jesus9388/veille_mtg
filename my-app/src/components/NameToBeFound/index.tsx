@@ -7,7 +7,7 @@ const NameToBeDetermined = () => {
 
   return (
     <div className="container content-center">
-      <DropDown setFormat={setFormat} />
+      <DropDown format={format} setFormat={setFormat} />
       <TextReader />
     </div>
   );

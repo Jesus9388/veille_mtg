@@ -1,4 +1,5 @@
 interface Props {
+  format: string;
   setFormat: (format: string) => void;
 }
 
@@ -12,14 +13,14 @@ const formatList = [
   "Brawl",
 ];
 
-const DropDown = ({ setFormat }: Props) => {
+const DropDown = ({ setFormat, format }: Props) => {
   return (
     <div className="mb-3">
       <label
         htmlFor="formats"
         className="block mb-2 text-sm font-medium text-gray-900"
       >
-        Select a format
+        {format !== "" ? "Format: " + format : "Select a format"}
       </label>
       <select
         id="formats"
