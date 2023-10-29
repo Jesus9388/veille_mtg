@@ -7,12 +7,18 @@ import { Card } from "../../model/magic";
 const NameToBeDetermined = () => {
   const [format, setFormat] = useState<string>("");
   const [illegalCards, setIllegalCards] = useState<Card[]>([]);
+  const [hasBeenSubmitted, setHasBeenSubmitted] = useState<boolean>(false);
+
+  const changeIllegalCards = (illegalCards: Card[]) => {
+    setHasBeenSubmitted(true);
+    setIllegalCards(illegalCards);
+  }
 
   return (
     <div className="container content-center">
       <DropDown format={format} setFormat={setFormat} />
-      <TextReader setIllegalCards={setIllegalCards} chosenFormat={format} />
-      <IllegalCards illegalCards={illegalCards} />
+      <TextReader setIllegalCards={changeIllegalCards} chosenFormat={format} />
+      <IllegalCards illegalCards={illegalCards} hasBeenSubmitted={hasBeenSubmitted}/>
     </div>
   );
 };
