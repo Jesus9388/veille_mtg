@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { getCards } from "../../services/mtg";
+import { Card } from "../../model/magic";
 
-const TextReader = () => {
+interface Props {
+  setIllegalCards: (formattedDeckList: Card[]) => void;
+  chosenFormat: string;
+}
+
+const TextReader = ({ setIllegalCards, chosenFormat }: Props) => {
   const [unformattedDeckList, setUnformattedDeckList] = useState<string>("");
 
   const formatDeckList = () => {
@@ -18,8 +24,17 @@ const TextReader = () => {
     }
 
     getCards(formattedDeckList)
-      .then((cards) => {
-        console.log(cards.data);
+      .then((res) => {
+        const cards = res.data.data;
+        const illegalCards: Card[] = [];
+
+        cards.forEach((card: Card) => {
+          if (card.legalities[chosenFormat.toLowerCase()] === "not_legal") {
+            illegalCards.push(card);
+          }
+        });
+
+        setIllegalCards(illegalCards);
       })
       .catch((error) => {
         console.log(error);
@@ -37,7 +52,8 @@ const TextReader = () => {
       />
       <button
         onClick={formatDeckList}
-        className="text-center border-black border bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded font-medium text-gray-900"
+        className="text-center border-black border bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded font-medium text-gray-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-green-500"
+        disabled={chosenFormat === "" || unformattedDeckList === ""}
       >
         Submit
       </button>

@@ -11,8 +11,8 @@ const NameToBeDetermined = () => {
   return (
     <div className="container content-center">
       <DropDown format={format} setFormat={setFormat} />
-      <TextReader />
-      <IllegalCards illegalCards={illegalCards}/>
+      <TextReader setIllegalCards={setIllegalCards} chosenFormat={format} />
+      <IllegalCards illegalCards={illegalCards} />
     </div>
   );
 };

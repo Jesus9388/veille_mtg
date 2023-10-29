@@ -1,39 +1,14 @@
 export interface Card {
     name: string;
-    names: string[];
-    manaCost: string;
-    cmc: number;
-    colors: string[];
-    colorIdentity: string[];
-    type: string;
-    supertypes: string[];
-    types: string[];
-    subtypes: string[];
-    rarity: string;
-    set: string;
-    text: string;
-    artist: string;
-    number: string;
-    power: string;
-    toughness: string;
-    layout: string;
-    multiverseid: number;
-    imageUrl: string;
-    rulings: Ruling[];
-    foreignNames: ForeignName[];
-    printings: string[];
-    originalText: string;
-    originalType: string;
-    id: string;
+    legalities: {
+        [key: string]: string;
+    }
+    multiVerseId?: number;
 }
 
-export interface Ruling {
-    date: Date;
-    text: string;
-}
-
-export interface ForeignName {
-    name: string;
-    language: string;
-    multiverseid: number;
+export interface ScryfallResponse {
+    object: string;
+    total_cards: number;
+    has_more: boolean;
+    data: Card[];
 }
