@@ -4,6 +4,9 @@ export interface Card {
         [key: string]: string;
     }
     multiVerseId?: number;
+    image_uris?: {
+        [key: string]: string;
+    }
 }
 
 export interface ScryfallResponse {
