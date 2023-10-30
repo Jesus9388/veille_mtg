@@ -56,7 +56,6 @@ const ContainerComponent = () => {
       yooooooooooo
     ];
     let string : string = audios[Math.floor(Math.random() * audios.length)]
-    return KekOrCringe;
     if (string === KekOrCringe) {
       return audios[Math.floor(Math.random() * audios.length)];
     }
