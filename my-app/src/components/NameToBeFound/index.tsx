@@ -3,7 +3,7 @@ import DropDown from "../DropDown";
 import TextReader from "../TextReader";
 import IllegalCards from "../IllegalCards";
 import { Card } from "../../model/magic";
-import faith from "./have-some-god-damn-faith.mp3"
+import faith from "../../audio/have-some-god-damn-faith.mp3"
 
 const NameToBeDetermined = () => {
   const [format, setFormat] = useState<string>("");
