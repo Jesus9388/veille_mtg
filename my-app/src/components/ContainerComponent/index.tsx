@@ -10,7 +10,7 @@ import lumbago from "../../audio/lumbago.mp3"
 import Muneh from "../../audio/Muneh.mp3"
 import plan from "../../audio/plan.mp3"
 
-const NameToBeDetermined = () => {
+const ContainerComponent = () => {
   const [format, setFormat] = useState<string>("");
   const [illegalCards, setIllegalCards] = useState<Card[]>([]);
   const [hasBeenSubmitted, setHasBeenSubmitted] = useState<boolean>(false);
@@ -78,4 +78,4 @@ const NameToBeDetermined = () => {
   );
 };
 
-export default NameToBeDetermined;
+export default ContainerComponent;
