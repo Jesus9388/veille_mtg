@@ -9,6 +9,7 @@ import KekOrCringe from "../../audio/KekOrCringe.mp3"
 import lumbago from "../../audio/lumbago.mp3"
 import Muneh from "../../audio/Muneh.mp3"
 import plan from "../../audio/plan.mp3"
+import yooooooooooo from "../../audio/yooooooooooo.mp3"
 
 const ContainerComponent = () => {
   const [format, setFormat] = useState<string>("");
@@ -50,10 +51,15 @@ const ContainerComponent = () => {
       jellybeans,
       lumbago,
       Muneh,
-      plan
+      plan,
+      KekOrCringe,
+      yooooooooooo
     ];
-
-    return audios[Math.floor(Math.random() * 5)];
+    let string : string = audios[Math.floor(Math.random() * audios.length)]
+    if (string === KekOrCringe) {
+      return audios[Math.floor(Math.random() * audios.length)];
+    }
+    return string;
   }
 
   const determineClassNames = () => {
