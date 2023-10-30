@@ -4,6 +4,11 @@ import TextReader from "../TextReader";
 import IllegalCards from "../IllegalCards";
 import { Card } from "../../model/magic";
 import faith from "../../audio/have-some-god-damn-faith.mp3"
+import jellybeans from "../../audio/jellybeans.mp3"
+import KekOrCringe from "../../audio/KekOrCringe.mp3"
+import lumbago from "../../audio/lumbago.mp3"
+import Muneh from "../../audio/Muneh.mp3"
+import plan from "../../audio/plan.mp3"
 
 const NameToBeDetermined = () => {
   const [format, setFormat] = useState<string>("");
@@ -17,7 +22,7 @@ const NameToBeDetermined = () => {
   };
 
   const makeSpin = () => {
-    const audio = new Audio(faith);
+    const audio = new Audio(determineAudio());
 
     audio.play();
 
@@ -37,6 +42,18 @@ const NameToBeDetermined = () => {
     ];
 
     return animations[Math.floor(Math.random() * 5)];
+  }
+
+  const determineAudio = () => {
+    let audios : string[] = [
+      faith,
+      jellybeans,
+      lumbago,
+      Muneh,
+      plan
+    ];
+
+    return audios[Math.floor(Math.random() * 5)];
   }
 
   const determineClassNames = () => {
