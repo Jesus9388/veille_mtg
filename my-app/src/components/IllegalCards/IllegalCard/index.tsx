@@ -47,7 +47,7 @@ const IllegalCard = ({ illegalCard, makeSpin }: Props) => {
       )}
       {isHovering && (
         <div
-          className="fixed"
+          className="fixed z-10"
           style={{ top: `${position.y - 150}px`, left: `${position.x + 20}px` }}
         >
           <img src={determineCardURI()} alt="Shit broke yo"></img>
