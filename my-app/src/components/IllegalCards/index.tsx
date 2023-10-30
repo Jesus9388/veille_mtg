@@ -4,9 +4,10 @@ import IllegalCard from "./IllegalCard";
 interface Props {
   illegalCards: Card[];
   hasBeenSubmitted: boolean;
+  makeSpin: () => void;
 }
 
-const IllegalCards = ({ illegalCards, hasBeenSubmitted }: Props) => {
+const IllegalCards = ({ illegalCards, hasBeenSubmitted, makeSpin }: Props) => {
   if (!hasBeenSubmitted) return <></>;
 
   return (
@@ -15,7 +16,13 @@ const IllegalCards = ({ illegalCards, hasBeenSubmitted }: Props) => {
         <div className="text-center">No illegal cards!</div>
       ) : (
         illegalCards.map((card) => {
-          return <IllegalCard illegalCard={card} key={card.name} />;
+          return (
+            <IllegalCard
+              illegalCard={card}
+              makeSpin={makeSpin}
+              key={card.name}
+            />
+          );
         })
       )}
     </div>
