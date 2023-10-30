@@ -27,10 +27,22 @@ const NameToBeDetermined = () => {
     }, 1000);
   };
 
+  const determineAnimation = () => {
+    let animations : String[] = [
+      "animate-spin",
+      "animate-ping",
+      "animate-pulse",
+      "animate-bounce",
+      "animate-wiggle"
+    ];
+
+    return animations[Math.floor(Math.random() * 5)];
+  }
+
   const determineClassNames = () => {
     let classNames = "container content-center ";
     if (isSpinning) {
-      classNames += "animate-spin";
+      classNames += determineAnimation();
     }
 
     return classNames;
