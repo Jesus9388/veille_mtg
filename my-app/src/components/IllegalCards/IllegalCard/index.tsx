@@ -23,6 +23,12 @@ const IllegalCard = ({ illegalCard, makeSpin }: Props) => {
 
   const onHoverEnd = () => setIsHovering(false);
 
+  const determineCardURI = () => {
+    if (!illegalCard.image_uris) return "";
+
+    return illegalCard.image_uris["small"] ?? "";
+  }
+
   return (
     <div
       className="relative"
@@ -44,7 +50,7 @@ const IllegalCard = ({ illegalCard, makeSpin }: Props) => {
           className="fixed"
           style={{ top: `${position.y - 150}px`, left: `${position.x + 20}px` }}
         >
-          <img src={illegalCard.image_uris!["small"]} alt="fumk u"></img>
+          <img src={determineCardURI()} alt="Shit broke yo"></img>
         </div>
       )}
       <div className="border-dashed border-2 text-center mb-2 p-3 border-red-500 border-opacity-50 hover:border-opacity-100 hover:bg-red-500 hover:text-white rounded-lg">
