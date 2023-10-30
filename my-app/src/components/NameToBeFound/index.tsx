@@ -3,6 +3,7 @@ import DropDown from "../DropDown";
 import TextReader from "../TextReader";
 import IllegalCards from "../IllegalCards";
 import { Card } from "../../model/magic";
+import faith from "./have-some-god-damn-faith.mp3"
 
 const NameToBeDetermined = () => {
   const [format, setFormat] = useState<string>("");
@@ -16,6 +17,10 @@ const NameToBeDetermined = () => {
   };
 
   const makeSpin = () => {
+    const audio = new Audio(faith);
+
+    audio.play();
+
     setIsSpinning(true);
     setTimeout(() => {
       setIsSpinning(false);
@@ -25,7 +30,7 @@ const NameToBeDetermined = () => {
   const determineClassNames = () => {
     let classNames = "container content-center ";
     if (isSpinning) {
-      classNames += "animate-ping";
+      classNames += "animate-spin";
     }
 
     return classNames;
