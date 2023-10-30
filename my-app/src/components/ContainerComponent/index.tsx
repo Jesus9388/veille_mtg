@@ -5,7 +5,7 @@ import IllegalCards from "../IllegalCards";
 import { Card } from "../../model/magic";
 import faith from "../../audio/have-some-god-damn-faith.mp3"
 
-const NameToBeDetermined = () => {
+const ContainerComponent = () => {
   const [format, setFormat] = useState<string>("");
   const [illegalCards, setIllegalCards] = useState<Card[]>([]);
   const [hasBeenSubmitted, setHasBeenSubmitted] = useState<boolean>(false);
@@ -61,4 +61,4 @@ const NameToBeDetermined = () => {
   );
 };
 
-export default NameToBeDetermined;
+export default ContainerComponent;
